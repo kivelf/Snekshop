@@ -1,6 +1,26 @@
 ## 1.Semester Python Mini Projekt
 ![SnekShop](https://github.com/kivelf/Snekshop/assets/107556520/48be15bb-9180-420c-8cce-89a2c7640690)
 
+# Update Aug 2024
+## **Version 1.1.**
+In this update:
+- **Code refactored:** This refactoring improves the overall structure and cleanliness of the code, making it easier to work with and extend in the future.
+- **Clear explanations:** The prompts now include explanations of the valid range and what different values represent.
+- **Input validation:** Added checks to ensure that inputs are within the expected range and are of the correct type, providing feedback to the user if their input is invalid.
+- **State Management:** Introduced *self.current_image* to keep track of the current state of the image after each operation.
+- **Save and Continue:** Updated the edit_menu, manip_menu, and filter_menu methods to allow users to return to the main menu and apply additional edits.
+- **Flexible Resizing and Cropping:** Users can specify dimensions as absolute values or percentages, as well as crop dimensions or use percentages to define the crop area.
+
+**Update Benefits:**
+- *Code Readability:* The code is more readable and organized.
+- *Maintainability:* Easier to maintain and extend.
+- *Separation of Concerns:* Each class and method has a clear responsibility.
+- *Reuse and Scalability:* Classes and methods can be reused and extended as needed.
+- *Better UX:* Adding clear explanations and input validation and feedback makes the program more user-friendly and robust.
+- *Subsequent Edits:* This allows the user to apply multiple edits to the same image in sequence without losing previous modifications, thus allowing for more complex editing.
+- *Flexible Size Editing:* Allowing the user to more flexibly resize and crop images by either specifying exact dimensions or relative percentages.
+__________________________
+
 # Projektbeskrivelse
 Til dette project valgte jeg at bruge Python til billedredigering, og at lave et tekst-baseret billedredigeringsprogram. Mit program skal kunne de følgende populære/almindelige redigeringsfunktioner: 
 1. Resize 
@@ -95,14 +115,14 @@ Vores mini Python projekt var en virkelig sjov og lærerig udfordring, og en rig
 
 Det sværste for mig var nok at vælge kun én af mine ideer i starten, da jeg havde rigtig mange af dem. Dette kommer selvfølgelig an på personen, men jeg fungerer bedre når der er strengere rammer/ mere definerede regler fra starten af, og så kan jeg vælge hvordan at være kreativ i dem. 
 
-Som ethvert stykke software blev mit program ikke ’færdiggjort’, derfor er denne udgivelse version 0.1. Jeg har allerede lavet en liste over de ting jeg gerne vil tilføje til softwaren: 
--	Fortæl brugeren om de mulige værdier når han/hun bliver spurgt om at taste ind input.
--	Forklaringer for værdierne! F.eks. 0 = sort/mørk, 255 = hvid/lys osv.
--	Tjek invalid/out of range input fra brugeren alle steder. F.eks. hvis værdien skal være mellem 0 og 255, og brugeren taster ind -10, eller et ord... osv.
--	Implementere muligheden for at bruge flere edits på det samme billede - f.eks. skær billedet, og så ændre på kontrast og lysstyrke.
+Som ethvert stykke software blev mit program ikke ’færdiggjort’, derfor er denne udgivelse version 1.0. Jeg har allerede lavet en liste over de ting jeg gerne vil tilføje til softwaren: 
+-	~~Fortæl brugeren om de mulige værdier når de bliver spurgt om at taste ind input.~~ -- Added in v.1.1 (Aug 2024).
+-	~~Forklaringer for værdierne! F.eks. 0 = sort/mørk, 255 = hvid/lys osv.~~ -- Added in v.1.1 (Aug 2024).
+-	~~Tjek invalid/out of range input fra brugeren alle steder. F.eks. hvis værdien skal være mellem 0 og 255, og brugeren taster ind -10, eller et ord... osv.~~ -- Added in v.1.1 (Aug 2024).
+-	~~Implementere muligheden for at bruge flere edits på det samme billede - f.eks. skær billedet, og så ændre på kontrast og lysstyrke.~~ -- Added in v.1.1 (Aug 2024).
+- ~~Scalable resize/crop - så at brugeren ikke skal taste ind alle værdierne, men kan f.eks. bare skrive, at det redigerede billede skal være 1000 px i bredden, eller 30% af den originale bredde osv.~~ -- Added in v.1.1 (Aug 2024).
 -	Implementere Sobel filter ( https://en.wikipedia.org/wiki/Sobel_operator ). Jeg begyndte at researche den, men jeg skal læse lidt mere grundigt før jeg kan prøve at skrive min egen Sobel filter function.
 -	Implementere muligheden for custom input billede - altså at brugeren kan selv uploade/vælge et billede, som ikke findes i programmet endnu.
--	Scalable resize/crop - så at brugeren ikke skal taste ind alle værdierne, men kan f.eks. bare skriv, at det redigerede billede skal være 1000 px i bredden, eller 30% af den originale bredde osv.
 -	GUI!!! Måske det hårdeste, men vigtigste at implementere.
 
-Jeg glæder mig til at forstætte med at arbejde på mit lille projekt i min fritid, og jeg er sikker på, at inden længe bliver version 1.0 uploadet på min GitHub profil. :) 
+Jeg glæder mig til at forstætte med at arbejde på mit lille projekt i min fritid, og jeg er sikker på, at inden længe bliver version 2.0 uploadet på min GitHub profil. :) 
