@@ -9,7 +9,7 @@ class MainMenu:
         self.current_image = None
 
     def display(self):
-        print('Welcome to snekshop v1.1!')
+        print('Welcome to snekshop v1.2!')
         image_path = self.choose_img()
         if image_path:
             self.editor = ImageEditor(image_path)
@@ -60,7 +60,7 @@ class MainMenu:
                         self.filter_menu()
                     elif choice == 4:
                         self.editor.save_img(self.current_image)
-                        print("Image saved and exiting.")
+                        print("Exiting...")
                         break
                 else:
                     print('Please enter a valid choice!')
@@ -156,9 +156,10 @@ class MainMenu:
                                    '1. Binary\n'
                                    '2. Outlines\n'
                                    '3. Enhanced edges\n'
-                                   '4. Go back\n'
+                                   '4. Sobel filter\n'
+                                   '5. Go back\n'
                                    '>>> '))
-                if choice in {1, 2, 3, 4}:
+                if choice in {1, 2, 3, 4, 5}:
                     if choice == 1:
                         threshold = self.get_valid_integer('Please select the binary threshold (0-255)>>> ', 0, 255)
                         self.current_image = self.editor.binary_img(self.current_image, threshold)
@@ -168,6 +169,8 @@ class MainMenu:
                     elif choice == 3:
                         self.current_image = self.editor.edges_img(self.current_image)
                     elif choice == 4:
+                        self.current_image = self.editor.sobel_filter(self.current_image)
+                    elif choice == 5:
                         break
                     self.current_image.show()
                 else:

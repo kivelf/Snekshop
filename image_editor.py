@@ -3,6 +3,7 @@
 
 from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
+from scipy.ndimage import sobel
 
 
 class ImageEditor:
@@ -130,3 +131,26 @@ class ImageEditor:
 
     def edges_img(self, image):
         return image.filter(ImageFilter.EDGE_ENHANCE)
+
+    def sobel_filter(self, image):
+        # convert to grayscale if the image is not already in grayscale mode since the Sobel operator works on single-channel images
+        if image.mode != 'L':
+            image = image.convert('L')
+
+        # convert the image to a numpy array
+        image_array = np.array(image)
+
+        # apply Sobel filter on both axes
+        sobel_x = sobel(image_array, axis=0)
+        sobel_y = sobel(image_array, axis=1)
+
+        # combine the Sobel filter results from both axes
+        sobel_combined = np.hypot(sobel_x, sobel_y)
+
+        # normalise the result to the 0-255 range and convert it to uint8
+        sobel_combined = (sobel_combined / np.max(sobel_combined) * 255).astype(np.uint8)
+
+        # convert the numpy array back to an image
+        filtered_image = Image.fromarray(sobel_combined)
+
+        return filtered_image
