@@ -2,6 +2,8 @@
 # handles the user interaction and menu navigation
 
 from image_editor import ImageEditor
+import os  # add this import to handle file path validation
+
 
 class MainMenu:
     def __init__(self):
@@ -9,7 +11,7 @@ class MainMenu:
         self.current_image = None
 
     def display(self):
-        print('Welcome to snekshop v1.2!')
+        print('Welcome to snekshop v1.3!')
         image_path = self.choose_img()
         if image_path:
             self.editor = ImageEditor(image_path)
@@ -25,22 +27,32 @@ class MainMenu:
                                    '3. Portrait of a woman\n'
                                    '4. Animal portrait\n'
                                    '5. The classic ;)\n'
+                                   '6. Upload your own image\n'
                                    '>>> '))
-                if choice in {1, 2, 3, 4, 5}:
-                    image_files = {
-                        1: "images/city.jpg",
-                        2: "images/mountains.jpg",
-                        3: "images/portrait.jpg",
-                        4: "images/owl.jpg",
-                        5: "images/lenna.jpg"
-                    }
-                    path = image_files[choice]
-                    print(f"You've chosen to work with {path}")
-                    return path
+                if choice in {1, 2, 3, 4, 5, 6}:
+                    if choice == 6:
+                        custom_path = input('Please enter the full path to your image>>> ')
+                        if os.path.isfile(custom_path):  # validate if the file exists
+                            print(f"You've chosen to work with {custom_path}")
+                            return custom_path
+                        else:
+                            print("The file does not exist. Please enter a valid path.")
+                    else:
+                        image_files = {
+                            1: "images/city.jpg",
+                            2: "images/mountains.jpg",
+                            3: "images/portrait.jpg",
+                            4: "images/owl.jpg",
+                            5: "images/lenna.jpg"
+                        }
+                        path = image_files[choice]
+                        print(f"You've chosen to work with {path}")
+                        return path
                 else:
                     print('Please enter a valid choice!')
             except ValueError:
                 print('Please enter a valid integer for your choice!')
+
 
     def print_menu(self):
         while True:
