@@ -2,6 +2,11 @@
 ![SnekShop](https://github.com/kivelf/Snekshop/assets/107556520/48be15bb-9180-420c-8cce-89a2c7640690)
 
 # Update Aug 2024
+## **Version 1.2.**
+In this update:
+- **Sobel filter integrated:** The user can now apply the Sobel filter to images by selecting the appropriate option from the *'Use a filter'* submenu.
+
+# Update Aug 2024
 ## **Version 1.1.**
 In this update:
 - **Code refactored:** This refactoring improves the overall structure and cleanliness of the code, making it easier to work with and extend in the future.
@@ -121,7 +126,7 @@ Som ethvert stykke software blev mit program ikke ’færdiggjort’, derfor er 
 -	~~Tjek invalid/out of range input fra brugeren alle steder. F.eks. hvis værdien skal være mellem 0 og 255, og brugeren taster ind -10, eller et ord... osv.~~ -- Added in v.1.1 (Aug 2024).
 -	~~Implementere muligheden for at bruge flere edits på det samme billede - f.eks. skær billedet, og så ændre på kontrast og lysstyrke.~~ -- Added in v.1.1 (Aug 2024).
 - ~~Scalable resize/crop - så at brugeren ikke skal taste ind alle værdierne, men kan f.eks. bare skrive, at det redigerede billede skal være 1000 px i bredden, eller 30% af den originale bredde osv.~~ -- Added in v.1.1 (Aug 2024).
--	Implementere Sobel filter ( https://en.wikipedia.org/wiki/Sobel_operator ). Jeg begyndte at researche den, men jeg skal læse lidt mere grundigt før jeg kan prøve at skrive min egen Sobel filter function.
+-	~~Implementere Sobel filter ( https://en.wikipedia.org/wiki/Sobel_operator ). Jeg begyndte at researche den, men jeg skal læse lidt mere grundigt før jeg kan prøve at skrive min egen Sobel filter function.~~ -- Added in v.1.2 (Aug 2024).
 -	Implementere muligheden for custom input billede - altså at brugeren kan selv uploade/vælge et billede, som ikke findes i programmet endnu.
 -	GUI!!! Måske det hårdeste, men vigtigste at implementere.
 
